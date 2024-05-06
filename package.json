@@ -1,0 +1,23 @@
+{
+  "name": "eds-generator",
+  "version": "1.0.0",
+  "description": "Generate AEM Edge Delivery Services boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "cloneTempRepo": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eKrausedivae/eds-generator.git"
+  },
+  "keywords": [
+    "eds"
+  ],
+  "author": "Elanor Krause",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eKrausedivae/eds-generator/issues"
+  },
+  "homepage": "https://github.com/eKrausedivae/eds-generator#readme",
+  "type": "module"
+}
