@@ -1,6 +1,6 @@
 {
   "name": "eds-generator",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Generate AEM Edge Delivery Services boilerplate",
   "scripts": {
     "test": "node index.js",
@@ -19,7 +19,7 @@
     "url": "https://github.com/eKrausedivae/eds-generator/issues"
   },
   "bin": {
-    "eds-generator": "index.js",
+    "boilerplate-generator": "index.js",
     "component-generator": "componentGenerator/index.mjs"
   },
   "homepage": "https://github.com/eKrausedivae/eds-generator#readme",
