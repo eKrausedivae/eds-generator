@@ -1,6 +1,6 @@
 {
   "name": "eds-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generate AEM Edge Delivery Services boilerplate",
   "main": "index.js",
   "scripts": {
