@@ -1,19 +1,18 @@
 #!/usr/bin/env node
-import { execSync } from 'child_process';
+import { cloneRepo } from './boilerplateGenerator/index.js';
+import { createNewComponent } from './componentGenerator/index.mjs';
+import { program } from 'commander';
 
-function run() {
-  try {
-    const folderName = process.argv.slice(2);
-    if (folderName.length === 0) {
-      throw new Error('Please enter a valid folder name.');
-    }
+program
+  .command('clone')
+  .argument('<folderName>', 'folder name')
+  .description('Clone a template repository into a new folder')
+  .action(cloneRepo);
 
-    const templateRepo = 'ifahrentholz/eds-editorial';
-    execSync(`git clone https://github.com/${templateRepo}.git '${folderName}'`);
-    console.log(`Template repository cloned into ${folderName} folder.`);
-  } catch (error) {
-    console.error('Error cloning template repository:', error);
-  }
-}
+program
+  .command('new')
+  .description('Create new component/block')
+  .action(createNewComponent);
 
-run();
+program
+  .parse(process.argv);

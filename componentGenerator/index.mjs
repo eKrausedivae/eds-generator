@@ -72,7 +72,7 @@ async function enquiry(prompts, cliOptions = {}) {
   return answers;
 }
 
-async function run() {
+export async function createNewComponent() {
   printIntroText();
 
   if (cliOptions.name) console.log(chalk.green('?'), 'Component Name?', chalk.cyan(cliOptions.name));
@@ -87,5 +87,3 @@ async function run() {
 
   process.exit = 0;
 }
-
-run();
