@@ -10,7 +10,6 @@ declare namespace GenerateComponent {
   }
 
   export interface Options extends CliOptions {
-    projectPath: String; // relative path to the new project
     name: ComponentName; // e.g. "related content"
     type: ComponentTypes; // is this an component or block
   }

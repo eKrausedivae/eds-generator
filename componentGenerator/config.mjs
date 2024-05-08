@@ -35,15 +35,6 @@ async function getTemplate(filename, { templatesDir = TEMPLATES_DIR } = {}) {
  * @type {GenerateComponent.Config}
  */
 export default [
-  // Path
-  {
-    id: 'PROJECTPATH',
-    prompt: {
-      name: 'projectPath',
-      type: 'input',
-      message: "What's the relative path of the new project?:",
-    },
-  },
   // Component Name
   {
     id: 'NAME',
@@ -93,7 +84,7 @@ export default [
           return await template.default(options);
         },
         path: (options) =>
-          `${options.projectPath}/${options.type === COMPONENT_TYPES.COMPONENT ? COMPONENTS_DIR : BLOCKS_DIR}/${options.kebabCase}/${options.kebabCase}.scss`,
+          `${options.type === COMPONENT_TYPES.COMPONENT ? COMPONENTS_DIR : BLOCKS_DIR}/${options.kebabCase}/${options.kebabCase}.scss`,
       },
     ],
   },
@@ -108,7 +99,7 @@ export default [
           return await template.default(options);
         },
         path: (options) =>
-          `${options.projectPath}/${options.type === COMPONENT_TYPES.COMPONENT ? COMPONENTS_DIR : BLOCKS_DIR}/${options.kebabCase}/${options.kebabCase}.md`,
+          `${options.type === COMPONENT_TYPES.COMPONENT ? COMPONENTS_DIR : BLOCKS_DIR}/${options.kebabCase}/${options.kebabCase}.md`,
       },
     ],
   },
@@ -126,7 +117,7 @@ export default [
           return await template.default(options);
         },
         path: (options) =>
-          `${options.projectPath}/${options.type === COMPONENT_TYPES.COMPONENT ? COMPONENTS_DIR : BLOCKS_DIR}/${options.kebabCase}/${options.kebabCase}.ts`,
+          `${options.type === COMPONENT_TYPES.COMPONENT ? COMPONENTS_DIR : BLOCKS_DIR}/${options.kebabCase}/${options.kebabCase}.ts`,
       },
     ],
   },

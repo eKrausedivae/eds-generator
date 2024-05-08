@@ -1,30 +1,9 @@
 #!/usr/bin/env node
-import { program, Option } from 'commander';
 import path from 'node:path';
 import chalk from 'chalk';
 import figlet from 'figlet';
 import inquirer from 'inquirer';
 import generateFiles from './generateFiles.mjs';
-
-const DEFAULT_CREATE_COMPONENT_CONFIG = './config.mjs';
-
-program
-  .addOption(
-    new Option(
-      '-N, --name [component name]',
-      "component name, incase you don't want to answer it in the cli interaction"
-    ).argParser((name) => name.toLowerCase().trim())
-  )
-  .option('-C, --config [config]', 'relative path to the optional config file.', DEFAULT_CREATE_COMPONENT_CONFIG)
-  .option(
-    '--templatesDir [templatesDir]',
-    "relative path to the directory where default templates are overwritten. If non passed 'componentGenerator/templates' will be checked"
-  )
-  .option('--verbose', 'logs debug information')
-  .parse(process.argv);
-
-// options provided by the user via CLI
-const cliOptions = program.opts();
 
 function printIntroText() {
   console.log(
@@ -72,7 +51,7 @@ async function enquiry(prompts, cliOptions = {}) {
   return answers;
 }
 
-export async function createNewComponent() {
+export async function createNewComponent(cliOptions) {
   printIntroText();
 
   if (cliOptions.name) console.log(chalk.green('?'), 'Component Name?', chalk.cyan(cliOptions.name));
